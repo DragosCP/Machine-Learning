@@ -38,7 +38,7 @@ from sklearn.preprocessing import StandardScaler
 
 # 1.2 Importing the dataset
 # read_csv will create a DataFrame exactly like on a database, with columns and rows, using pandas.
-dataset = pd.read_csv(r"C:\Users\Dragoss\MachineLearning\Data preprocessing\Data.csv")
+dataset = pd.read_csv(r"Data preprocessing\Data.csv")
 
 # now we need to create the matrix of features and then the dependent variable vector
 # In any dataset with which we're going to train a ML model, we have the same entities which are features and the dependent variable vector, which, in our case, is the last column as we are interested to see if customers are going to purchase somethign in the future based on previous information

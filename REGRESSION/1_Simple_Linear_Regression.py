@@ -34,7 +34,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 #importing the dataset
-dataset = pd.read_csv(r"C:\Users\Dragoss\MachineLearning\REGRESSION\Salary_Data.csv")
+dataset = pd.read_csv(r"REGRESSION\Salary_Data.csv")
 X = dataset.iloc[:, :-1].values
 y = dataset.iloc[:, -1].values
 

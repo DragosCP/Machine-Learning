@@ -63,6 +63,7 @@
 # Step 2: Construct all Possible Regression Models: (2 at the power of N)-1 total combinations
 # Step 3: Select the one with the best criterion -> Finish.
 
+# https://setosa.io/ev/principal-component-analysis/
 
 # We're going to focus on no 2: Backwards elimination as it is the fastest
 
@@ -74,7 +75,7 @@ import numpy as np
 import pandas as pd
 
 # importing the dataset
-dataset = pd.read_csv(r"C:\Users\Dragoss\MachineLearning\REGRESSION\50_Startups.csv")
+dataset = pd.read_csv(r"REGRESSION\50_Startups.csv")
 X = dataset.iloc[:, :-1].values
 y = dataset.iloc[:, -1].values
 
