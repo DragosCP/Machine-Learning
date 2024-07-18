@@ -68,3 +68,14 @@ plt.title('Truth or Bluff (SVR)')
 plt.xlabel('Position level')
 plt.ylabel('Salary')
 plt.show()
+
+
+# #Predicting test results
+# y_pred = sc_y.inverse_transform(regressor.predict(sc_X.transform(X)).reshape(-1,1))
+# np.set_printoptions(precision=2)
+# print(np.concatenate((y_pred.reshape(len(y_pred),1), y.reshape(len(y),1)),1))
+
+# #Evaluating the Model Performance.
+# from sklearn.metrics import r2_score
+# r2_score(y_test, y_pred)
+

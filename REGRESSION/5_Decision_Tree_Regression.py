@@ -16,9 +16,8 @@
 #                    -64.1        0.7
 
 
-# we don't have to apply feature scalling for neither Decision Tree Regression neither for Random Forest Regression: 
-# That's because the predictions from decision tree regression or random forest regression model are resulting from successive splits of the data, through the different nodes of your tree.
-# And therefore there are not some equations like with the previous models. And no feature scaling is needed to split the different values of your feature into these different categories leading to different predictions. We can still do this with the original scale of your features even if your features take different ranges of values.
+# we don't have to apply feature scaling for neither Decision Tree Regression nor Random Forest Regression: 
+# That's because the predictions from these models are resulting from successive splits of the data, through the different nodes of our tree.
 
 # Importing the libraries
 import numpy as np
