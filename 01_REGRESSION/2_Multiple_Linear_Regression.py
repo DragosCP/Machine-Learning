@@ -75,7 +75,7 @@ import numpy as np
 import pandas as pd
 
 # importing the dataset
-dataset = pd.read_csv(r"REGRESSION\50_Startups.csv")
+dataset = pd.read_csv(r"01_REGRESSION\50_Startups.csv")
 X = dataset.iloc[:, :-1].values
 y = dataset.iloc[:, -1].values
 
@@ -98,7 +98,7 @@ regressor = LinearRegression()
 regressor.fit(X_train, y_train)
 
 # Predicting the Test set results
-# bare in mind that we now have 4 features instead of one. Therefore we cannot plot a graph like before so we're going to use 2 vectors, the vector of the 10 real profits of the test sets and then the 10 predictive profits of the hole test set to compare them and we will see if the model performs whell.
+# bare in mind that we now have 4 features instead of one. Therefore we cannot plot a graph like before so we're going to use 2 vectors, the vector of the 10 real profits of the test sets and then the 10 predictive profits of the hole test set to compare them
 y_pred = regressor.predict(X_test)
 np.set_printoptions(precision=2)
 print(np.concatenate((y_pred.reshape(len(y_pred), 1), y_test.reshape(len(y_test), 1)), 1))

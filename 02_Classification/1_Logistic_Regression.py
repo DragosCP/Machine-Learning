@@ -34,7 +34,7 @@ import matplotlib.pyplot as plt
 
 
 
-dataset = pd.read_csv(r"Classification/Social_Network_Ads.csv")
+dataset = pd.read_csv(r"02_Classification/Social_Network_Ads.csv")
 X = dataset.iloc[:, :-1].values
 y = dataset.iloc[:, -1].values
 

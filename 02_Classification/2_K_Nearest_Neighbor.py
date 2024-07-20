@@ -16,7 +16,7 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 
-database = pd.read_csv(r"Classification/Social_Network_Ads.csv")
+database = pd.read_csv(r"02_Classification/Social_Network_Ads.csv")
 X = database.iloc[:, :-1].values
 y = database.iloc[:, -1].values
 
