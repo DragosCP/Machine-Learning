@@ -10,6 +10,8 @@
 
 # each AD has a fixed conversion rate
 
+# this is a deterministic algorithm
+
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
