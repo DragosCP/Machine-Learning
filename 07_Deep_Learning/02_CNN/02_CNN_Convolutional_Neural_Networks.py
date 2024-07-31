@@ -17,10 +17,51 @@
 
 ## STEPS:
 
-# Step 1: Convolution
+# Step 1: Convolution (+ ReLU Layer)
 # Step 2: Max Pooling
 # Step 3: Flattening
 # Step 4: Full connection
+
+# STEP 1: Convolution: 
+# Input image comes as a matrice of 0s and 1s and then we have a Feature Detector (or Kernel or Filter), which is a matrice of 3x3 or 5x5 or 7x7 and then we multiply the values from input image with the Feature detector and the results are going into a Feature map: 0x0 = 0, 0x1 = 0, 1x1 = 1, if we have 2 x 1x1 = 2 and so on. The feature detector moves one column at a time and gets the updated results in the feature map (sometimes called activation map).
+# The result is: we've reduced the size of the image (easier to process, faster) and we're detecting some parts of the image that are integral (which means it matches exactly with our Feature Detector). 
+# in reality it is the same: we've looking at an image, let's say a cat, and if we see the face of the cat, or the shape, nose, basically we're looking at features, we realise it is a cat without looking at the entire pixels of the image.
+# Also, the network decides on multiple feature maps to preserve lots of information (this is done through training) and applies different filters for each feature map
+# gimp.org -> free tool to adjust images.
+
+# 1b - ReLU Layer
+# basically we apply our Rectifier function (from ANN) -> we want to increase non-linearity in our CNN (break up the linearity) and the reason for this is that images themselves are highly non-linears (different borders, colours, elements) https://arxiv.org/pdf/1609.04112 
+# https://arxiv.org/pdf/1502.01852
+
+# STEP 2: MAX POOLING
+# spatial invariance - allows the NN to locate features accurately (tilted features, too close, further apart, relative to each other, disorted)
+# we are working with convolution (Feature) map and we apply Max (or Min) Pooling => we take a box of 2x2 pixels (or larger) and we place it in the top left hand corner and we find the max value in that box and then we record only that value (disregarding the other 3) and then we move 2 pixels on the right and record again, and so on, until our POOLED FEATURE MAP is done.
+# disregarding 3 pixels out of 4 (75%) of the information that is not the important feature, and, because we're taking the max value, we're accounting for any distorsion + we're reducing the size again by reducing the number of parameters that are going into our Neural Network
+# All this adds up to preventing overfitting !!
+# https://www.ais.uni-bonn.de/papers/icann2010_maxpool.pdf
+
+# STEP 3: FLATTENING
+# we're taking our pooled feature map 3x3 and turn it into a Column 1x9 - input layer of ANN
+
+# STEP 4: FULL CONNECTION
+# now we're ready to add everything to Artificial Neural Network ->
+# -> Input layer (X1, X2,.. Xn) -> Fully Connected Layer (simillar to Hidden Layers in ANN where there don't have to be fully connected)-> Output Layer (output value)
+# -> The ANN from this point is going to create more feature layers
+# -> in the ANN if the result is not satisfied, we call a CROSS function in ANN (we used means square error there) or a LOSS function (CNN -> we use a cross entropy -> and then error is calculated, then it is back propagated through the network and the weigths and feature detectors (matrices we've put on top) are adjusted. All these are done with a lot of science in the background, math, through gradient descent and back propagation.
+
+# https://adeshpande3.github.io/The-9-Deep-Learning-Papers-You-Need-To-Know-About.html
+
+## Softmax & Cross-Entropy
+# if we have 2 outputs, dog and cat, and the weight of the dog is 0.95 and the weight of the cat is 0.5, the dog and the cat won't add up to 1. 
+# 
+# The Softmax function, or the normalized exponential function, is a generalization of the logistic function that "squashes a k-dimensional vector of arbitrary real values to a k-dimensional vector of real values in the range of 0-1 that all add up to 1. (wiki)
+
+# The Cross-entropy function:
+# (something like the mean squared error function which we've used as the cost-function for assessing (goal to minimize the MSE) of our neural network performance)
+# it's called the loss function in CNN - that we want to minimise in order to maximize the performance of our neural network.
+
+# http://peterroelants.github.io/posts/neural_network_implementation_intermezzo02/
+
 
 # We have 4,000 images of dogs and 4,000 images of cats. We also have a test set consisting of 1,000 images of cats and 1,000 of dogs.
 
